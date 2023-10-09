@@ -1,0 +1,115 @@
+<html>
+<body>
+<script type="text/javascript">
+  function l1()
+  {
+   
+  }
+  function check()
+  {
+  if(document.forms.f1.t1.value=="")
+  {
+   window.alert("comlpete the form");
+  /document./
+  }
+  else if
+  (document.forms.f1.t2.value=="")
+  {
+   window.alert("comlpete the form");
+  /document./
+  }
+  }
+  function refresh()
+  {
+   document.writeById("f1")("").reset() 
+  }
+</script>
+<style>
+   c{
+   margin-top:20;
+   width:30;
+   }
+   input[type="button"]{
+   width:50px;
+   height:20px;
+   }
+   d{
+   margin-left:500;
+   width:30;
+   }
+    w{
+    margin-top:50
+   margin-left:500;
+   width:30;
+   }
+  </style>
+  <form align="center">
+
+  <a href="file:///home/user/Desktop/emil%20html/table.html">
+  <input type="button" value="next"/> </a>
+  <a href="file:///home/user/Desktop/emil%20html/liked.html">
+  <input type="button" value="home"/> </a>
+  <a href="file:///home/user/Desktop/emil%20html/liked.html">
+  <input type="button" value="prev"/> </a> 
+  </form>
+<center>
+<form id="f1" onsubmit="check()">
+<div class=w>
+<table border=1 bgcolor=green hight="100%">
+</tr>
+<tr>
+ <td>name:</td>
+ <td><input type="text" id="t1"></td>
+</tr>
+<tr>
+ <td>gende</td>
+ <td>male<input type="radio" name="gender" value="male" checked="checked" id="2">
+    female<input type="radio" name="gender" value="female">
+ </td>
+</tr>
+<tr>
+ <td>date</td>
+ <td><input type="date" id="3"required>></td>
+</tr>
+<tr>
+ <td>adress</td>
+ <td><textarea cols="20" rows="7" id="4"required></textarea></td>
+</tr>
+<tr>
+ <td>phone no</td>
+ <td><input type="text" id="t2"></td>
+</tr>
+<tr>
+<td>guardian</td>
+ <td>father<input type="radio" name="gender" value="female">
+    mother<input type="radio" name="gender" value="female">
+    other<input type="radio" name="gender" value="female">
+    <input type="text">
+ </td>
+</tr>
+<tr>
+ <td>relation with guardian </td>
+ <td><input type="text" id="7"required>></td>
+</tr>
+<tr>
+ <td>hobbies</td>
+ <td><input type="text"id="8"required>></td>
+</tr>
+<tr> 
+ <td>course</td>
+ <td>
+  <select name="course" required>
+   <option value="bsc">bsc</option>
+   <option value="bca">bca</option>
+   <option value="bca">bca</option>
+  </select>
+ </td>
+</tr>
+</table>
+</div>
+<input type="submit" value="submit">
+<input type="RESET" value="CLEAR" >
+ </form>
+ </center>
+</boby>
+</html>
