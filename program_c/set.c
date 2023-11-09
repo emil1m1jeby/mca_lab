@@ -1,127 +1,47 @@
-#include <stdio.h>
-#include<stdlib.h>
-int main(){
-	int setU[10],setA[10],setB[10],unionAB[10],intersection[10],diffAB[10],diffBA[10],i,j,flag;
-	int u[10]={1,2,3,4,5,6,7};
-	int a[10]={2,3,4};
-	int b[10]={3,4,5,6};
-	
-	for(i=0;i<7;++i){
-		setU[i]=1;
-	}
-	printf("Universal bit set\n    	");
-	for(i=0;i<7;++i){
-		printf("%d ",setU[i]);
-	}
-
-	//set A
-	for(i=0;i<7;++i)
-	{
-		flag=0;
-		for(j=0;j<7;++j)
-		{
-
-			if(u[i]==a[j])
-			{
-				flag=1;
-				break;
-			}
-		}
-			if(flag==1)
-			{
-				setA[i]=1;
-			}
-			else
-			{
-				setA[i]=0;
-			}
-		}
-	printf("\nBit set A\n	   ");
-	for(i=0;i<7;++i)
-	{
-		printf("%d ",setA[i]);
-	}
-
-	//set B
-	for(i=0;i<7;++i)
-	{
-		flag=0;
-		for(j=0;j<7;++j)
-		{
-
-			if(u[i]==b[j])
-			{
-				flag=1;
-				break;
-			}
-		}
-			if(flag==1)
-			{
-				setB[i]=1;
-			}
-			else
-			{
-				setB[i]=0;
-			}
-		}
-
-	printf("\nBit set B\n	   ");
-	for(i=0;i<7;++i)
-	{
-		printf("%d ",setB[i]);
-	}
-
-	//Union of A and B
-
-	printf("\nUnion of A and B\n	   ");
-	for(i=0;i<7;++i)
-	{
-		unionAB[i]=setA[i]|setB[i];
-		printf("%d ",unionAB[i]);
-	}
-
-	//Intersection of A and B
-	printf("\nIntersection of A and B\n	   ");
-	for(i=0;i<7;++i)
-	{
-		intersection[i]=setA[i]&setB[i];
-		printf("%d ",intersection[i]);
-	}
-
-	//Difference of A and B
-	printf("\nDifference  A - B\n	   ");
-	for(i=0;i<7;++i)
-	{
-		if(setA[i]==1 && setB[i]==0)
-		{
-			diffAB[i]=1;
-		}
-		else
-		{
-			diffAB[i]=0;
-		}
-		printf("%d ",diffAB[i]);
-	}
-
-
-	//Difference of B and A
-	printf("\nDifference  B - A\n	   ");
-	for(i=0;i<7;++i)
-	{
-		if(setB[i]==1 && setA[i]==0)
-		{
-			diffBA[i]=1;
-		}
-		else
-		{
-			diffBA[i]=0;
-		}
-		printf("%d ",diffBA[i]);
-	}
+#include<stdio.h>
+int u[10]={1,2,3,4,5,6,7,8,9,10};
+void display(int *arr);
+int main()
+   {
+      int universal[10]={1,1,1,1,1,1,1,1,1,1};
+      int a[10]={1,1,1,0,0,0,1,0,0,1};
+      int b[10]={1,0,0,1,0,0,1,1,1,0};
+      int i,a_union_b[10],a_inter_b[10],a_differ_b[10],b_differ_a[10];
+      printf("\n\t\t Universal set is:\n");
+      display(universal);
+      printf("\n\t\t Set A is:\n");
+      display(a);
+      printf("\n\t\t Set B is:\n");
+      display(b);
+      printf("\n\t\t A union B is:\n");
+      for(i=0;i<10;i++)
+          a_union_b[i]=a[i]||b[i];
+          display(a_union_b);
+      printf("\n\t\t A intersection B is:\n");
+      for(i=0;i<10;i++)
+          a_inter_b[i]=a[i]&&b[i];
+          display(a_inter_b);    
+      printf("\n\t\t The difference of A and B is:\n");
+      for(i=0;i<10;i++)
+          a_differ_b[i]=a[i]-b[i];
+          display(a_differ_b);
+      printf("\n\t\t The difference of A and B is:\n");
+      for(i=0;i<10;i++)
+          b_differ_a[i]=b[i]-a[i];
+          display(b_differ_a);        
+      return 0;
+   }
+void display(int *arr)
+   {
+      int *ar=arr,i;
+      for(i=0;i<10;i++)
+              {
+            if(*ar==1)
+            printf("%d \t",u[i]);
+            ar++;
+              }
+   }          
 
 
 
 
-
-
-}
